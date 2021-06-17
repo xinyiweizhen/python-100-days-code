@@ -35,5 +35,19 @@ def basic():
 
     print(df.tail(2))
 
+    # 显示索引与列名
+    print(df.index)
+
+    print(df.columns)
+
+    # 输出底层数据的 NumPy 对象。
+    """
+        注意，DataFrame (opens new window)的列由多种数据类型组成时，该操作耗费系统资源较大，这也是 Pandas 和 NumPy 的本质区别：
+        NumPy 数组只有一种数据类型，DataFrame 每列的数据类型各不相同。
+        调用 DataFrame.to_numpy() (opens new window)时，Pandas 查找支持 DataFrame 里所有数据类型的 NumPy 数据类型。
+        还有一种数据类型是 object，可以把 DataFrame 列里的值强制转换为 Python 对象。
+    """
+    print(df.to_numpy())
+
 if __name__ == '__main__':
     basic()
